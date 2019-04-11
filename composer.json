@@ -1,0 +1,30 @@
+{
+  "name": "edno/codeception-graphwalker",
+  "description": "Codeception extension for model based testing",
+  "keywords": ["codeception", "codeception-extension", "mbt", "model-based-testing", "graphml"],
+  "homepage": "https://github.com/edno/codeception-graphwalker",
+  "license": "MIT",
+  "authors": [
+      {
+        "name": "Gregory Heitz",
+        "email": "edno@edno.io"
+      }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "codeception/codeception": ">=2.4 | <3.0",
+    "clue/graph": "^0.9",
+    "graphp/algorithms": "^0.8"
+  },
+  "require-dev": {
+    "php-coveralls/php-coveralls": "^2.1",
+    "edno/graphyed": "*"
+  },
+  "autoload": {
+    "psr-4": {
+	     "Codeception\\Extension\\": "src/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
