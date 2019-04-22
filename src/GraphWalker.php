@@ -33,6 +33,8 @@ class GraphWalker implements LoaderInterface
 
   protected $algorithmClass;
 
+  protected $loader;
+
   public function __construct($settings = [])
   {
       $this->settings = Configuration::mergeConfigs(self::$defaultSettings, $settings);
