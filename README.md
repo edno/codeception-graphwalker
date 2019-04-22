@@ -23,14 +23,19 @@ The extension can be installed using [Composer](https://getcomposer.org)
 $ composer require edno/codeception-graphwalker
 ```
 
-And add the **GraphWalker** format to the list of supported format into your suite configuration file (`.suite.yml`):
+## Configuration
+Add the **GraphWalker** format to the list of supported format into your suite configuration file (`.suite.yml`):
 ```yaml
 formats:
   - \edno\codeception-graphwalker\GraphWalker
 ```
 
-## Usage
-> To be documented
+In the configuration file, declare the graph algorithm class to be used:
+```yaml
+graphwalker:
+    algorithm: Graphp\Algorithms\ShortestPath\Dijkstra
+```
+*Refer to [graphp/algorithms](https://github.com/graphp/algorithms) for supported algorithms.*
 
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fedno%2Fcodeception-graphwalker.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fedno%2Fcodeception-graphwalker?ref=badge_large)
