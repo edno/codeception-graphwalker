@@ -13,7 +13,7 @@ It is inspired from [GraphWalker](https://graphwalker.github.io/) and based on t
 
 ## Minimum Requirements
 
-- Codeception ≥ 2.4
+- Codeception ≥ 2.4.3
 - PHP ≥ 7.0
 
 ## Installation
@@ -27,7 +27,7 @@ $ composer require edno/codeception-graphwalker
 Add the **GraphWalker** format to the list of supported format into your suite configuration file (`.suite.yml`):
 ```yaml
 formats:
-  - edno\Codeception\GraphWalker
+  - edno\codeception-graphwalker\GraphWalker
 ```
 
 In the configuration file, declare the graph **algorithm** class to be used and the scripts **path** :
