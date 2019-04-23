@@ -43,13 +43,13 @@ class GraphWalker implements LoaderInterface
       if($this->algorithmClass == '' ) {
         throw new ModuleConfigException(__CLASS__, 'Configuration setting "algorithm" is missing');
       }
-      
+
       $this->path = $this->settings['graphwalker']['path'];
 
       $this->di = new Di();
 
       $this->parser = new GraphLoader();
-      $this->loader = new \Codeception\Test\Loader(['path' => $this->path]);
+      $this->loader = new TestLoader(['path' => $this->path]);
   }
 
   public function loadTests($filename)
