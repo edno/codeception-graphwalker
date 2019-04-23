@@ -40,7 +40,7 @@ class GraphWalker implements LoaderInterface
       $this->settings = Configuration::mergeConfigs(self::$defaultSettings, $settings);
 
       $this->algorithmClass = $this->settings['graphwalker']['algorithm'];
-      if($this->algorithmClass == '' ) {
+      if ($this->algorithmClass == '') {
         throw new ModuleConfigException(__CLASS__, 'Configuration setting "algorithm" is missing');
       }
 
@@ -63,7 +63,7 @@ class GraphWalker implements LoaderInterface
       }
       $path = $algorithm->getWalkTo($this->graph->getVertices()->getVertexLast())->getGraph();
       $steps = $path->getVertices();
-      foreach($steps as $step) {
+      foreach ($steps as $step) {
           $file = $this->path . $step->getAttribute('labels')[0];
           $this->loader->loadTest($file);
       }
