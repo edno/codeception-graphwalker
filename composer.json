@@ -22,7 +22,7 @@
   },
   "autoload": {
     "psr-4": {
-	     "Codeception\\Extension\\": "src/"
+	     "edno\\Codeception\\": "src/"
     }
   },
   "minimum-stability": "dev",
