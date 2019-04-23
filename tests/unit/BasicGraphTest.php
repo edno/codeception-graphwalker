@@ -14,9 +14,9 @@ class BasicGraphTest extends \Codeception\Test\Unit
     {
         $model = codecept_data_dir().'basicgraph.graphml';
         $graphwalker = new  GraphWalker([
-                              'path' => 'tests/_data/',
                               'graphwalker' => [
-                                'algorithm' => 'Graphp\Algorithms\ShortestPath\Dijkstra'
+                                'algorithm' => 'Graphp\Algorithms\ShortestPath\Dijkstra',
+                                'path' => 'tests/_data/'
                               ]
                             ]);
         $graphwalker->loadTests($model);
@@ -46,9 +46,9 @@ class BasicGraphTest extends \Codeception\Test\Unit
     {
         $model = codecept_data_dir().'basicgraph.graphml';
         $graphwalker = new  GraphWalker([
-                              'path' => 'tests/_data/',
                               'graphwalker' => [
-                                'algorithm' => 'Graphp\Algorithms\DoesNotExist'
+                                'algorithm' => 'Graphp\Algorithms\DoesNotExist',
+                                'path' => 'tests/_data/'
                               ]
                             ]);
         $graphwalker->loadTests($model);
@@ -63,9 +63,9 @@ class BasicGraphTest extends \Codeception\Test\Unit
     {
       $model = codecept_data_dir().'doesnotexist.graphml';
       $graphwalker = new  GraphWalker([
-                            'path' => 'tests/_data/',
                             'graphwalker' => [
-                              'algorithm' => 'Graphp\Algorithms\ShortestPath\Dijkstra'
+                              'algorithm' => 'Graphp\Algorithms\ShortestPath\Dijkstra',
+                              'path' => 'tests/_data/'
                             ]
                           ]);
       $graphwalker->loadTests($model);
@@ -80,9 +80,9 @@ class BasicGraphTest extends \Codeception\Test\Unit
     {
       $model = codecept_data_dir().'notagrapfile.graphml';
       $graphwalker = new  GraphWalker([
-                            'path' => 'tests/_data/',
                             'graphwalker' => [
-                              'algorithm' => 'Graphp\Algorithms\ShortestPath\Dijkstra'
+                              'algorithm' => 'Graphp\Algorithms\ShortestPath\Dijkstra',
+                              'path' => 'tests/_data/'
                             ]
                           ]);
       $graphwalker->loadTests($model);

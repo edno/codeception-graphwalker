@@ -14,9 +14,9 @@ class GraphWalker implements LoaderInterface
 
   protected static $defaultSettings = [
       'graphwalker' => [
-          'algorithm' => ''
+          'algorithm' => '',
+          'path' => ''
       ],
-      'path' => ''
   ];
 
   protected $settings = [];
@@ -38,15 +38,18 @@ class GraphWalker implements LoaderInterface
   public function __construct($settings = [])
   {
       $this->settings = Configuration::mergeConfigs(self::$defaultSettings, $settings);
+
       $this->algorithmClass = $this->settings['graphwalker']['algorithm'];
       if($this->algorithmClass == '' ) {
         throw new ModuleConfigException(__CLASS__, 'Configuration setting "algorithm" is missing');
       }
+      
+      $this->path = $this->settings['graphwalker']['path'];
 
       $this->di = new Di();
 
       $this->parser = new GraphLoader();
-      $this->loader = new TestLoader($this->settings);
+      $this->loader = new \Codeception\Test\Loader(['path' => $this->path]);
   }
 
   public function loadTests($filename)
@@ -64,6 +67,7 @@ class GraphWalker implements LoaderInterface
           $file = $this->path . $step->getAttribute('labels')[0];
           $this->loader->loadTest($file);
       }
+      $this->settings['exclude'][] = $filename;
       $this->tests = $this->loader->getTests();
   }
 

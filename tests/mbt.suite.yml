@@ -1,0 +1,6 @@
+actor: MbtTester
+formats:
+    - edno\Codeception\GraphWalker
+graphwalker:
+    algorithm: Graphp\Algorithms\ShortestPath\Dijkstra
+    path: tests/_data/

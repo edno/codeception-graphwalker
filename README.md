@@ -27,13 +27,14 @@ $ composer require edno/codeception-graphwalker
 Add the **GraphWalker** format to the list of supported format into your suite configuration file (`.suite.yml`):
 ```yaml
 formats:
-  - \edno\codeception-graphwalker\GraphWalker
+  - edno\codeception-graphwalker\GraphWalker
 ```
 
-In the configuration file, declare the graph algorithm class to be used:
+In the configuration file, declare the graph **algorithm** class to be used and the scripts **path** :
 ```yaml
 graphwalker:
     algorithm: Graphp\Algorithms\ShortestPath\Dijkstra
+    path: tests_/data/
 ```
 *Refer to [graphp/algorithms](https://github.com/graphp/algorithms) for supported algorithms.*
 
