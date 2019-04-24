@@ -27,7 +27,7 @@ $ composer require edno/codeception-graphwalker
 Add the **GraphWalker** format to the list of supported format into your suite configuration file (`.suite.yml`):
 ```yaml
 formats:
-  - edno\codeception-graphwalker\GraphWalker
+  - edno\Codeception\GraphWalker
 ```
 
 In the configuration file, declare the graph **algorithm** class to be used and the scripts **path** :
