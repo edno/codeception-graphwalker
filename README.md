@@ -13,8 +13,8 @@ It is inspired from [GraphWalker](https://graphwalker.github.io/) and based on t
 
 ## Minimum Requirements
 
-- Codeception ≥ 2.4.3
-- PHP ≥ 7.0
+- Codeception ≥ 3.0
+- PHP ≥ 7.2
 
 ## Installation
 The extension can be installed using [Composer](https://getcomposer.org)
