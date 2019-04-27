@@ -26,24 +26,21 @@ class BasicGraphTest extends \Codeception\Test\Unit
         foreach($tests as $test) {
           $this->assertInstanceOf('\Codeception\Test\Unit',$test);
         }
-        $this->assertContains('testFirstScenario', $tests[0]->getName());
-        $this->assertContains('testFourthScenario', $tests[3]->getName());
+        $this->assertStringContainsString('testFirstScenario', $tests[0]->getName());
+        $this->assertStringContainsString('testFourthScenario', $tests[3]->getName());
     }
 
-
-    /**
-      * @expectedException Codeception\Exception\ModuleConfigException
-      */
     public function testExceptionAlgorithmSettingMissing()
     {
+        $this->expectException(Codeception\Exception\ModuleConfigException::class);
+
         $graphwalker = new  GraphWalker();
     }
 
-    /**
-      * @expectedException Codeception\Exception\TestParseException
-      */
     public function testExceptionAlgorithmSettingInvalid()
     {
+        $this->expectException(Codeception\Exception\TestParseException::class);
+
         $model = codecept_data_dir().'basicgraph.graphml';
         $graphwalker = new  GraphWalker([
                               'graphwalker' => [
@@ -56,38 +53,36 @@ class BasicGraphTest extends \Codeception\Test\Unit
         $tests = $graphwalker->getTests();
     }
 
-    /**
-      * @expectedException Codeception\Exception\TestParseException
-      */
     public function testExceptionTestFileNotExist()
     {
-      $model = codecept_data_dir().'doesnotexist.graphml';
-      $graphwalker = new  GraphWalker([
-                            'graphwalker' => [
-                              'algorithm' => 'Graphp\Algorithms\ShortestPath\Dijkstra',
-                              'path' => 'tests/_data/'
-                            ]
-                          ]);
-      $graphwalker->loadTests($model);
-      $this->assertInstanceOf('\Fhaculty\Graph\Graph',$graphwalker->getGraph());
-      $tests = $graphwalker->getTests();
+        $this->expectException(Codeception\Exception\TestParseException::class);
+
+        $model = codecept_data_dir().'doesnotexist.graphml';
+        $graphwalker = new  GraphWalker([
+                              'graphwalker' => [
+                                'algorithm' => 'Graphp\Algorithms\ShortestPath\Dijkstra',
+                                'path' => 'tests/_data/'
+                              ]
+                            ]);
+        $graphwalker->loadTests($model);
+        $this->assertInstanceOf('\Fhaculty\Graph\Graph',$graphwalker->getGraph());
+        $tests = $graphwalker->getTests();
     }
 
-    /**
-      * @expectedException Codeception\Exception\TestParseException
-      */
     public function testExceptionTestFileInvalid()
     {
-      $model = codecept_data_dir().'notagrapfile.graphml';
-      $graphwalker = new  GraphWalker([
-                            'graphwalker' => [
-                              'algorithm' => 'Graphp\Algorithms\ShortestPath\Dijkstra',
-                              'path' => 'tests/_data/'
-                            ]
-                          ]);
-      $graphwalker->loadTests($model);
-      $this->assertInstanceOf('\Fhaculty\Graph\Graph',$graphwalker->getGraph());
-      $tests = $graphwalker->getTests();
+        $this->expectException(Codeception\Exception\TestParseException::class);
+
+        $model = codecept_data_dir().'notagrapfile.graphml';
+        $graphwalker = new  GraphWalker([
+                              'graphwalker' => [
+                                'algorithm' => 'Graphp\Algorithms\ShortestPath\Dijkstra',
+                                'path' => 'tests/_data/'
+                              ]
+                            ]);
+        $graphwalker->loadTests($model);
+        $this->assertInstanceOf('\Fhaculty\Graph\Graph',$graphwalker->getGraph());
+        $tests = $graphwalker->getTests();
     }
 
 }
