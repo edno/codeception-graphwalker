@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "079f1dea393760b7255a723b038a85f3",
+    "content-hash": "c69981d2f878be126ef9ed72ab5e1ef0",
     "packages": [
         {
             "name": "behat/gherkin",
@@ -2772,6 +2772,49 @@
                 "codeception"
             ],
             "time": "2019-11-13T17:32:27+00:00"
+        },
+        {
+            "name": "codeception/module-cli",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Codeception/module-cli.git",
+                "reference": "ad8b180c1b0133ac4da29d02d37aabb95acf5a49"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Codeception/module-cli/zipball/ad8b180c1b0133ac4da29d02d37aabb95acf5a49",
+                "reference": "ad8b180c1b0133ac4da29d02d37aabb95acf5a49",
+                "shasum": ""
+            },
+            "require": {
+                "codeception/codeception": "4.0.x-dev | ^4.0",
+                "php": ">=5.6.0 <8.0"
+            },
+            "require-dev": {
+                "codeception/util-robohelpers": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Bodnarchuk"
+                }
+            ],
+            "description": "Codeception module for testing basic shell commands and shell output",
+            "homepage": "http://codeception.com/",
+            "keywords": [
+                "codeception"
+            ],
+            "time": "2019-09-19T10:50:14+00:00"
         },
         {
             "name": "graphp/algorithms",
