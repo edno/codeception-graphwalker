@@ -12,13 +12,14 @@
   ],
   "require": {
     "php": ">=7.2",
-    "codeception/codeception": "^3",
+    "codeception/codeception": ">=3",
     "clue/graph": "^0.9",
     "edno/graphyed": "*"
   },
   "require-dev": {
     "graphp/algorithms": "^0.8",
-    "php-coveralls/php-coveralls": "^2.1"
+    "php-coveralls/php-coveralls": "^2",
+    "codeception/module-asserts": "^1"
   },
   "autoload": {
     "psr-4": {
